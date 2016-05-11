@@ -7,8 +7,8 @@ $(document).ready(function() {
 	
 	function moveListener(){
 		$("body").keyup(function(event){
+			
 			if (event.which === 38){
-				console.log("up")
 			} else if (event.which === 40) {
 				console.log("down")
 			}	else if (event.which === 39) {

@@ -1,6 +1,6 @@
 function Game(string){
 	this.string = string;
-}
+};
 
 Game.prototype.populateBoard = function(){
 	var string= this.string;
@@ -8,6 +8,10 @@ Game.prototype.populateBoard = function(){
 	cells.each(function(index){
 		if (string[index] != 0){
 			$(cells[index]).text(string[index]);
-		}
-	})
-}
+		};
+	});
+};
+
+Game.prototype.newRandomNumber = function(){
+	
+};
