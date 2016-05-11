@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="css/application.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/mousetrap.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/application.js"></script>
+
+  <title>256!</title>
+</head>
+<body>
+  <header>
+    <button class="new-game">New Game</button>
+  </header>
+  <div class="game-container">
+    <div class="grid-container">
+      <div class="grid-row">
+        <div class="grid-cell" id="1-1"></div>
+        <div class="grid-cell" id="1-2"></div>
+        <div class="grid-cell" id="1-3"></div>
+        <div class="grid-cell" id="1-4"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-cell" id="2-1"></div>
+        <div class="grid-cell" id="2-2"></div>
+        <div class="grid-cell" id="2-3"></div>
+        <div class="grid-cell" id="2-4"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-cell" id="3-1"></div>
+        <div class="grid-cell" id="3-2"></div>
+        <div class="grid-cell" id="3-3"></div>
+        <div class="grid-cell" id="3-4"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-cell" id="4-1">
+        </div>
+        <div class="grid-cell" id="4-2"></div>
+        <div class="grid-cell" id="4-3"></div>
+        <div class="grid-cell" id="4-4"></div>
+      </div>
+    </div>
+    <!-- <div class="tile-container">
+      <div id="tile-2">
+        <div id="tile-inner">2</div>
+      </div>
+    </div> -->
+  </div>
+</body>
+</html>
