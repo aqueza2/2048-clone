@@ -1,4 +1,8 @@
-$(document).ready(function() {
-	$(".new-game").on("click")
+function Game(string){
+	this.string = string;
+	console.log(string)
+}
 
-});
+Game.prototype.toString = function(){
+		
+}
