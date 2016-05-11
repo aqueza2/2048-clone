@@ -3,7 +3,7 @@ function Game(string){
 };
 
 Game.prototype.populateBoard = function(){
-	var string= this.string;
+	var string = this.string;
 	var cells = $(".grid-cell");
 	cells.each(function(index){
 		if (string[index] != 0){
@@ -13,5 +13,5 @@ Game.prototype.populateBoard = function(){
 };
 
 Game.prototype.newRandomNumber = function(){
-	
+
 };
