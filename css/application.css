@@ -1,0 +1,54 @@
+body {
+  width: 100%;
+  height: 800px;
+}
+
+div {
+  display: block;
+}
+
+.game-container{
+  position: relative;
+  padding: 15px;
+  background: #9B111E;
+  border-radius: 6px;
+  width: 490px;
+  height: 490px;
+  margin: 0 auto;
+}
+
+.grid-container{
+  width: 490px;
+  height: 490px;
+  position: relative;
+  top: 8px;
+  left: 8px;
+}
+
+.grid-row {
+  margin-bottom: 15px;
+  height: 106.25px;
+}
+
+.grid-cell {
+  font-size: 100px;
+  text-align: center;
+  width: 106.25px;
+  height: 106.25px;
+  margin-right: 15px;
+  float: left;
+  border-radius: 3px;
+  background: rgba(238, 228, 218, 0.35);
+}
+
+
+#tile-2 {
+  width: 106px;
+  height: 106px;
+  margin: 0 auto;
+  background-color: #faebd7;
+  border-radius: 6px;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+}
