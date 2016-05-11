@@ -6,6 +6,8 @@ Game.prototype.populateBoard = function(){
 	var string= this.string;
 	var cells = $(".grid-cell");
 	cells.each(function(index){
-		$(cells[index]).text(string[index]);
+		if (string[index] != 0){
+			$(cells[index]).text(string[index]);
+		}
 	})
 }
