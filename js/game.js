@@ -12,6 +12,8 @@ Game.prototype.populateBoard = function(){
 	});
 };
 
-Game.prototype.newRandomNumber = function(){
 
-};
+Game.prototype.newRandomNumber = function(){
+	var possibilities = [2,2,2,4,2,2,2,2]
+	possibilities[Math.floor(Math.random() * possibilities.length)];
+}
