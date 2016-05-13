@@ -30,8 +30,9 @@ Game.prototype.addRandomNumber = function(){
 
 Game.prototype.move = function(direction){
 	var gameArray = this.string.split("")
+	console.log(gameArray)
 	if (direction === "up") { 
-
+		
 	}
 }
 
