@@ -24,6 +24,7 @@ Game.prototype.addRandomNumber = function(){
 		}
 	});
 	indexOfEmptyCell = emptyCells[Math.floor(Math.random() *emptyCells.length)];
-	gameArray[indexOfEmptyCell] = randomGeneratedNumber.toString()
-	
+	gameArray[indexOfEmptyCell] = randomGeneratedNumber.toString();
+	this.string = gameArray.join('');
+	console.log(this.string);
 };

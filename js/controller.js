@@ -9,6 +9,7 @@ $(document).ready(function() {
 	function moveListener(){
 		$("body").keyup(function(event){
 			game.addRandomNumber();
+			game.populateBoard();
 			if (event.which === 38){
 				console.log("up")
 			} else if (event.which === 40) {
@@ -20,6 +21,5 @@ $(document).ready(function() {
 			};
 		});
 	};
-
 });
 
