@@ -5,3 +5,18 @@ var transpose = function(array){
     })
   });
 }
+
+function removeZeros(section) {
+ return section.filter(function(number){
+   return number != "0"
+ });
+}
+
+function turnToInteger(array){
+  var passedArray = array;
+  var integerArray = []
+  passedArray.forEach(function(number) {
+    integerArray.push(parseInt(number))
+  });
+  return integerArray; 
+}

@@ -38,19 +38,23 @@ Game.prototype.move = function(direction){
 	if (direction === "up") { 
 		var upArray = transpose(newArray);
 		upArray.forEach(function(section){
-			if (section.length === 4) {
-				if ((section[0] === section[1]) && (section[2] === section[3])) {
-					section[0] = section[0] +
-				} else if (section[0] === section[1]) {
-
-				} else if (section[1] === section[2]) {
-
-				} else if (section[2] === section[3]) {
-
-				}
-			}
-		})
-	}
-}
+			var filteredSection = turnToInteger(removeZeros(section));
+			console.log(filteredSection)
+			if (filteredSection.length === 4) {
+				if ((filteredSection[0] === filteredSection[1]) && (filteredSection[2] === filteredSection[3])) {
+					filteredSection[0] = filteredSection[0] + filteredSection[1]
+					filteredSection[2] = filteredSection[2] + filteredSection[3]
+					console.log(filteredSection[0])
+				} else if (filteredSection[0] === filteredSection[1]) {
+					filteredSection[0] = filteredSection[0] + filteredSection[1]
+				} else if (filteredSection[1] === filteredSection[2]) {
+					filteredSection[1] = filteredSection[1] + filteredSection[2]
+				} else if (filteredSection[2] === filteredSection[3]) {
+					filteredSection[2] = filteredSection[2] + filteredSection[3]
+				};
+			};
+		});
+	};
+};
 
 
