@@ -22,7 +22,7 @@ Game.prototype.addRandomNumber = function(){
 			emptyCells.push(index);
 		}
 	});
-	var indexOfEmptyCell = emptyCells[Math.floor(Math.random() *emptyCells.length)];
+	var indexOfEmptyCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
 	gameArray[indexOfEmptyCell] = randomGeneratedNumber.toString();
 	this.string = gameArray.join('');
 	console.log(this.string);
@@ -36,7 +36,20 @@ Game.prototype.move = function(direction){
 	var four = string.substring(12, 16).split("")
 	var newArray = [one,two, three, four]
 	if (direction === "up") { 
-		console.log(transpose(newArray))
+		var upArray = transpose(newArray);
+		upArray.forEach(function(section){
+			if (section.length === 4) {
+				if ((section[0] === section[1]) && (section[2] === section[3])) {
+					section[0] = section[0] +
+				} else if (section[0] === section[1]) {
+
+				} else if (section[1] === section[2]) {
+
+				} else if (section[2] === section[3]) {
+
+				}
+			}
+		})
 	}
 }
 
