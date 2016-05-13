@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var game;
 	$(".new-game").on("click", function(){
-		game = new Game('0000202000000000');
+		game = new Game('2000200040004000');
 		game.populateBoard();
 		moveListener();
 	});
@@ -9,15 +9,14 @@ $(document).ready(function() {
 	function moveListener(){
 		$("body").keyup(function(event){
 			game.addRandomNumber();
-			game.move("up")
 			if (event.which === 38){
-				
+				game.move("up")
 			} else if (event.which === 40) {
-				console.log("down")
+				game.move("down")
 			}	else if (event.which === 39) {
-				console.log("right")
+				game.move("right")
 			} else if (event.which === 37) {
-				console.log("left")
+				game.move("left")
 			};
 			game.populateBoard();
 		});

@@ -22,7 +22,7 @@ Game.prototype.addRandomNumber = function(){
 			emptyCells.push(index);
 		}
 	});
-	var indexOfEmptyCell = emptyCells[Math.floor(Math.random() *emptyCells.length)];
+	var indexOfEmptyCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
 	gameArray[indexOfEmptyCell] = randomGeneratedNumber.toString();
 	this.string = gameArray.join('');
 	console.log(this.string);
@@ -36,8 +36,25 @@ Game.prototype.move = function(direction){
 	var four = string.substring(12, 16).split("")
 	var newArray = [one,two, three, four]
 	if (direction === "up") { 
-		console.log(transpose(newArray))
-	}
-}
+		var upArray = transpose(newArray);
+		upArray.forEach(function(section){
+			var filteredSection = turnToInteger(removeZeros(section));
+			console.log(filteredSection)
+			if (filteredSection.length === 4) {
+				if ((filteredSection[0] === filteredSection[1]) && (filteredSection[2] === filteredSection[3])) {
+					filteredSection[0] = filteredSection[0] + filteredSection[1]
+					filteredSection[2] = filteredSection[2] + filteredSection[3]
+					console.log(filteredSection[0])
+				} else if (filteredSection[0] === filteredSection[1]) {
+					filteredSection[0] = filteredSection[0] + filteredSection[1]
+				} else if (filteredSection[1] === filteredSection[2]) {
+					filteredSection[1] = filteredSection[1] + filteredSection[2]
+				} else if (filteredSection[2] === filteredSection[3]) {
+					filteredSection[2] = filteredSection[2] + filteredSection[3]
+				};
+			};
+		});
+	};
+};
 
 
