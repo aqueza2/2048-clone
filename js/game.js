@@ -12,19 +12,27 @@ Game.prototype.populateBoard = function(){
 	});
 };
 
-
 Game.prototype.addRandomNumber = function(){
 	var possibilities = [2,2,2,4,2,2,2,2]
 	randomGeneratedNumber = possibilities[Math.floor(Math.random() * possibilities.length)];
-	gameArray = this.string.split("");
-	emptyCells = []
+	var gameArray = this.string.split("");
+	var emptyCells = []
 	gameArray.forEach(function(cell, index){
 		if(cell === "0" ){
 			emptyCells.push(index);
 		}
 	});
-	indexOfEmptyCell = emptyCells[Math.floor(Math.random() *emptyCells.length)];
+	var indexOfEmptyCell = emptyCells[Math.floor(Math.random() *emptyCells.length)];
 	gameArray[indexOfEmptyCell] = randomGeneratedNumber.toString();
 	this.string = gameArray.join('');
 	console.log(this.string);
 };
+
+Game.prototype.move = function(direction){
+	var gameArray = this.string.split("")
+	if (direction === "up") { 
+
+	}
+}
+
+

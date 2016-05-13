@@ -5,13 +5,13 @@ $(document).ready(function() {
 		game.populateBoard();
 		moveListener();
 	});
-	
+
 	function moveListener(){
 		$("body").keyup(function(event){
 			game.addRandomNumber();
-			game.populateBoard();
+			game.move("up")
 			if (event.which === 38){
-				console.log("up")
+				
 			} else if (event.which === 40) {
 				console.log("down")
 			}	else if (event.which === 39) {
@@ -19,6 +19,7 @@ $(document).ready(function() {
 			} else if (event.which === 37) {
 				console.log("left")
 			};
+			game.populateBoard();
 		});
 	};
 });
