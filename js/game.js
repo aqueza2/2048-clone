@@ -39,14 +39,17 @@ Game.prototype.move = function(direction){
 		var upArray = transpose(newArray);
 		upArray.forEach(function(section){
 			var filteredSection = turnToInteger(removeZeros(section));
-			console.log(filteredSection)
 			if (filteredSection.length === 4) {
 				if ((filteredSection[0] === filteredSection[1]) && (filteredSection[2] === filteredSection[3])) {
 					filteredSection[0] = filteredSection[0] + filteredSection[1]
+					filteredSection[1] = 0
 					filteredSection[2] = filteredSection[2] + filteredSection[3]
-					console.log(filteredSection[0])
+					filteredSection[3] = 0
 				} else if (filteredSection[0] === filteredSection[1]) {
 					filteredSection[0] = filteredSection[0] + filteredSection[1]
+					filteredSection[1] = filteredSection[2]
+					filteredSection[2] = filteredSection[3]
+					filteredSection[3] = 0
 				} else if (filteredSection[1] === filteredSection[2]) {
 					filteredSection[1] = filteredSection[1] + filteredSection[2]
 				} else if (filteredSection[2] === filteredSection[3]) {
