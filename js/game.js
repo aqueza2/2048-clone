@@ -29,10 +29,14 @@ Game.prototype.addRandomNumber = function(){
 };
 
 Game.prototype.move = function(direction){
-	var gameArray = this.string.split("")
-	console.log(gameArray)
+	var string = this.string;
+	var one = string.substring(0, 4).split("")
+	var two = string.substring(4, 8).split("")
+	var three = string.substring(8, 12).split("")
+	var four = string.substring(12, 16).split("")
+	var newArray = [one,two, three, four]
 	if (direction === "up") { 
-		
+		console.log(transpose(newArray))
 	}
 }
 
