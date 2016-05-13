@@ -1,14 +1,17 @@
 $(document).ready(function() {
+	var game;
 	$(".new-game").on("click", function(){
-		var game = new Game('0000202000000000');
+		game = new Game('0000202000000000');
 		game.populateBoard();
 		moveListener();
 	});
 	
 	function moveListener(){
 		$("body").keyup(function(event){
-			
+			game.addRandomNumber();
+			game.populateBoard();
 			if (event.which === 38){
+				console.log("up")
 			} else if (event.which === 40) {
 				console.log("down")
 			}	else if (event.which === 39) {
@@ -18,6 +21,5 @@ $(document).ready(function() {
 			};
 		});
 	};
-
 });
 
