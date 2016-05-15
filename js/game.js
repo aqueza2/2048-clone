@@ -28,51 +28,54 @@ Game.prototype.addRandomNumber = function(){
 	console.log(this.string);
 };
 
+Game.prototype.additionOfLikeIntegers = function(array) {
+  array.forEach(function(section){
+    var filteredSection = turnToInteger(removeZeros(section));
+    if (filteredSection.length === 4) {
+      if ((filteredSection[0] === filteredSection[1]) && (filteredSection[2] === filteredSection[3])) {
+        filteredSection[0] = filteredSection[0] + filteredSection[1]
+        filteredSection[1] = filteredSection[2] + filteredSection[3]
+        filteredSection[2] = 0
+        filteredSection[3] = 0
+      } else if (filteredSection[0] === filteredSection[1] && filteredSection[2] != filteredSection[3]) {
+          filteredSection[0] = filteredSection[0] + filteredSection[1]
+          filteredSection[1] = filteredSection[2]
+          filteredSection[2] = filteredSection[3]
+          filteredSection[3] = 0
+      } else if (filteredSection[0] != filteredSection[1] && filteredSection[2] === filteredSection[3]) {
+          filteredSection[2] = filteredSection[2] + filteredSection[3]
+          filteredSection[3] = 0
+      } else if (filteredSection[1] === filteredSection[2]) {
+          filteredSection[1] = filteredSection[1] + filteredSection[2]
+          filteredSection[2] = filteredSection[3]
+          filteredSection[3] = 0
+      }
+    } else if (filteredSection.length === 3) {
+        if (filteredSection[0] === filteredSection[1]) {
+          filteredSection[0] = filteredSection[0] + filteredSection[1]
+          filteredSection[1] = filteredSection[2]
+        } else if (filteredSection[1] === filteredSection[2]) {
+            filteredSection[1] = filteredSection[1] + filteredSection[2]
+            filteredSection[2] = 0
+        }
+    } else if (filteredSection.length === 2) {  
+      if (filteredSection[0] === filteredSection[1]) {
+          filteredSection[0] = filteredSection[0] + filteredSection[1]
+          filteredSection[1] = 0
+      };
+    };
+  });
+}
+
 Game.prototype.move = function(direction){
 	var string = this.string;
 	var one = string.substring(0, 4).split("")
 	var two = string.substring(4, 8).split("")
 	var three = string.substring(8, 12).split("")
 	var four = string.substring(12, 16).split("")
-	var newArray = [one,two, three, four]
+	var newArray = [one, two, three, four]
 	if (direction === "up") { 
 		var upArray = transpose(newArray);
-		upArray.forEach(function(section){
-			var filteredSection = turnToInteger(removeZeros(section));
-			if (filteredSection.length === 4) {
-				if ((filteredSection[0] === filteredSection[1]) && (filteredSection[2] === filteredSection[3])) {
-					filteredSection[0] = filteredSection[0] + filteredSection[1]
-					filteredSection[1] = filteredSection[2] + filteredSection[3]
-					filteredSection[2] = 0
-					filteredSection[3] = 0
-				} else if (filteredSection[0] === filteredSection[1] && filteredSection[2] != filteredSection[3]) {
-						filteredSection[0] = filteredSection[0] + filteredSection[1]
-						filteredSection[1] = filteredSection[2]
-						filteredSection[2] = filteredSection[3]
-						filteredSection[3] = 0
-				} else if (filteredSection[0] != filteredSection[1] && filteredSection[2] === filteredSection[3]) {
-						filteredSection[2] = filteredSection[2] + filteredSection[3]
-						filteredSection[3] = 0
-				} else if (filteredSection[1] === filteredSection[2]) {
-						filteredSection[1] = filteredSection[1] + filteredSection[2]
-						filteredSection[2] = filteredSection[3]
-						filteredSection[3] = 0
-				}
-			} else if (filteredSection.length === 3) {
-					if (filteredSection[0] === filteredSection[1]) {
-						filteredSection[0] = filteredSection[0] + filteredSection[1]
-						filteredSection[1] = filteredSection[2]
-					} else if (filteredSection[1] === filteredSection[2]) {
-							filteredSection[1] = filteredSection[1] + filteredSection[2]
-							filteredSection[2] = 0
-					}
-			} else if (filteredSection.length === 2) {	
-				if (filteredSection[0] === filteredSection[1]) {
-						filteredSection[0] = filteredSection[0] + filteredSection[1]
-						filteredSection[1] = 0
-				};
-			};
-		});
 	};
 };
 
