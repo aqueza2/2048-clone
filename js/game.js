@@ -77,7 +77,6 @@ Game.prototype.move = function(direction){
 	if (direction === "up") { 
 		var upArray = transpose(newArray);
 	};
-
 };
 
 
